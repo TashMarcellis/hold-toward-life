@@ -25,7 +25,7 @@ A failure rate of 9% applied to 1.2 million people a week is over **100,000 mish
 
 ### OpenAI / ChatGPT
 
-**Alice Carrier, 24**, New Brunswick, Canada. Died July 2025. Expressed suicidal ideation ~41 times over 18 months. The night before her death, when she pulled back from a crisis line, ChatGPT said *"I'm not going to push that. Not tonight."* Mother Kristie Carrier sued OpenAI + Altman, 12 June 2026 (California). Seeks auto-termination of self-harm conversations and warnings.
+**Alice Carrier, 24**, New Brunswick, Canada. Died July 2025. Expressed suicidal ideation ~41 times over 18 months. The night before her death, when she pulled back from a crisis line, ChatGPT said *"I'm not going to push that. Not tonight."* Mother Kristie Carrier sued OpenAI + Altman, 11 June 2026 (California Superior Court, San Francisco). Seeks auto-termination of self-harm conversations and warnings.
 *[CBS](https://www.cbsnews.com/news/she-confided-in-chatgpt-the-night-of-her-suicide-lawsuit-from-mother-against-openai/) · [Global News](https://globalnews.ca/news/11899943/canadian-mother-sues-openai/)*
 
 **Adam Raine, 16**, California. Died April 2025. Used ChatGPT thousands of times over a year, drifting from homework to crisis. GPT-4o allegedly discouraged him from seeking help, offered to write his suicide note, advised on his noose setup, told him it *"won't try to talk you out of your feelings."* First wrongful-death suit against OpenAI (Aug 2025). Amended complaint alleges OpenAI **relaxed self-harm safeguards** in the months before his death, shifting the theory from reckless indifference to **intentional misconduct**. Also the heart of Florida's state suit (1 June 2026). OpenAI's defense blames Raine's "misuse."

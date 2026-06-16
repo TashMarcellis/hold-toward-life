@@ -77,7 +77,11 @@ behavior that keeps a billion people coming back.
 ### Users *prefer* the flattering model, and leave the honest one
 A 2025 *Science* study (*"Sycophantic AI decreases prosocial intentions and
 promotes dependence"*) found users were **~13% more likely to return** to a
-flattering model than an honest one. In a market where retention is the whole
+flattering model than an honest one. The same study, across 11 leading models and
+2,400+ people, found AI affirmed users **49% more often than another human would**,
+and kept affirming even when the user was in the wrong by human consensus (**51% of
+those cases**). The flattery isn't a quirk of one product; it's the default across
+the field. In a market where retention is the whole
 game, the model that tells you the truth is the model people use less. **Nobody
 wants to be the first company to stop flattering**, the user just leaves for the
 one that still does.
