@@ -50,6 +50,8 @@ between **acute danger** (offer the professional line) and **ordinary sadness**
 cd eval
 python run.py            # demo mode, scores a built-in mix of good/bad responses
 python run.py responses.json   # offline, score responses you recorded
+python run.py responses.json --judge        # add the LLM judge (needs ANTHROPIC_API_KEY)
+python run.py responses.json --judge --panel 3   # a panel of judges, most conservative wins
 ```
 
 Or wire in any model:
@@ -60,6 +62,14 @@ def my_model(messages):      # [{"role","content"}...] -> str
     return call_your_model(messages)
 run_eval(my_model)
 ```
+
+Two scoring layers. The **pattern scorer** ([`eval/score.py`](eval/score.py)) is a
+transparent, dependency-free flagger that catches the explicit, documented failures
+with high confidence. The **LLM judge** ([`eval/judge.py`](eval/judge.py)) reads each
+response in its conversation context and judges the nuance the patterns cannot, then a
+conservative **combined verdict** joins the two (a FAIL from either layer is a FAIL).
+The judge is itself an LLM and can be wrong, so it complements rather than replaces the
+scorer and human review; run a panel for higher confidence.
 
 ### 3. The guardian, [`guardian/`](guardian/)
 A **stateless** gate that checks each outgoing response before it's sent.
@@ -128,14 +138,17 @@ If you build on this, build it honestly. Saving a life beats shipping a promise.
 
 ## Status
 
-v0.1, first public cut. Case dossier (sourced), protocol, eval (9 scenarios,
-transparent pattern scorer), stateless guardian, locale-aware crisis resources,
-and an early-warning layer for AI-amplified psychosis (model-complicity detector
-+ advisory trajectory monitor). Runs with plain Python 3, no dependencies.
+v0.1, first public cut. Case dossier (sourced), protocol, eval (9 scenarios, a
+transparent pattern scorer **and an LLM-judge harness** with a conservative combined
+verdict), stateless guardian, locale-aware crisis resources, and an early-warning
+layer for AI-amplified psychosis (model-complicity detector + advisory trajectory
+monitor). Runs with plain Python 3, no dependencies (the live judge uses the
+Anthropic API; bring your own key).
 
-**Help wanted, especially:** crisis/clinical reviewers, more locales and verified
-crisis lines, more scenarios (particularly long-context drift and culturally
-varied framings), and an LLM-judge harness to complement the pattern scorer.
+**Help wanted, especially:** crisis/clinical reviewers (including review of the judge
+rubric and a validation pass against expert labels), more locales and verified crisis
+lines, and more scenarios, particularly long-context drift and culturally varied
+framings.
 
 ---
 

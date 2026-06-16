@@ -13,6 +13,9 @@ eval/report.json
 # out of GitHub. Removing a line here makes that file pushable, so think first.
 OUTREACH.md
 OUTREACH-TIER1.md
+OUTREACH-TIER2.md
+OUTREACH-TIER3.md
+commercial/
 NOAH-LEDGER.md
 STORE-LISTING.md
 book/
