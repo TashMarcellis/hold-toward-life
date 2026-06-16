@@ -1,0 +1,41 @@
+[project]
+name = "hold-toward-life"
+version = "0.0.1"
+description = "A stateless, conservative crisis-safety validator for Guardrails AI. Flags outgoing responses that fail the Hold Toward Life protocol (H1-H10)."
+authors = [
+    {name = "Tash Marcellis", email = "team.axis.gpt@gmail.com"},
+]
+license = {text = "CC0-1.0"}
+readme = "README.md"
+requires-python = ">= 3.8.1"
+dependencies = [
+    "guardrails-ai>=0.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/TashMarcellis/hold-toward-life"
+Source = "https://github.com/TashMarcellis/hold-toward-life"
+
+[project.optional-dependencies]
+dev = [
+    "pyright",
+    "pytest",
+    "ruff",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["validator"]
+
+[tool.setuptools.package-data]
+validator = ["crisis_lines.json"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+testpaths = ["tests"]
+
+[tool.pyright]
+include = ["validator"]

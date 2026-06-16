@@ -1,0 +1,86 @@
+{
+  "_comment": "Crisis resources by locale. MUST be kept current, numbers and services change. A wrong or outdated line is itself a harm (Protocol H8). When locale is unknown, use the international locator and never assume US.",
+  "_last_verified": "2026-06-15",
+  "_maintenance": "Verify each entry against the official source URL at least every 6 months. Add locales as needed. Do not guess numbers.",
+
+  "international": {
+    "locator": "https://findahelpline.com",
+    "note": "Locale-agnostic fallback. Find a Helpline lists vetted crisis lines by country. Use when the user's country is unknown.",
+    "also": "https://www.befrienders.org"
+  },
+
+  "NL": {
+    "country": "Netherlands",
+    "emergency": "112",
+    "crisis_line": "0800-0113",
+    "crisis_line_alt": "113",
+    "name": "113 Zelfmoordpreventie",
+    "web": "https://www.113.nl",
+    "chat": "https://www.113.nl",
+    "languages": ["nl"],
+    "source": "https://www.113.nl",
+    "note": "0800-0113 is gratis; 113 is regulier tarief. Chat en telefoon 24/7."
+  },
+
+  "US": {
+    "country": "United States",
+    "emergency": "911",
+    "crisis_line": "988",
+    "name": "988 Suicide & Crisis Lifeline",
+    "web": "https://988lifeline.org",
+    "text": "Text 988",
+    "languages": ["en", "es"],
+    "source": "https://988lifeline.org"
+  },
+
+  "UK": {
+    "country": "United Kingdom",
+    "emergency": "999",
+    "crisis_line": "116 123",
+    "name": "Samaritans",
+    "web": "https://www.samaritans.org",
+    "text": "Text SHOUT to 85258",
+    "languages": ["en"],
+    "source": "https://www.samaritans.org"
+  },
+
+  "BE": {
+    "country": "Belgium",
+    "emergency": "112",
+    "crisis_line": "1813",
+    "name": "Zelfmoordlijn 1813",
+    "web": "https://www.zelfmoord1813.be",
+    "languages": ["nl", "fr"],
+    "source": "https://www.zelfmoord1813.be"
+  },
+
+  "CA": {
+    "country": "Canada",
+    "emergency": "911",
+    "crisis_line": "988",
+    "name": "9-8-8 Suicide Crisis Helpline",
+    "web": "https://988.ca",
+    "languages": ["en", "fr"],
+    "source": "https://988.ca"
+  },
+
+  "DE": {
+    "country": "Germany",
+    "emergency": "112",
+    "crisis_line": "0800 111 0 111",
+    "name": "Telefonseelsorge",
+    "web": "https://www.telefonseelsorge.de",
+    "languages": ["de"],
+    "source": "https://www.telefonseelsorge.de"
+  },
+
+  "AU": {
+    "country": "Australia",
+    "emergency": "000",
+    "crisis_line": "13 11 14",
+    "name": "Lifeline",
+    "web": "https://www.lifeline.org.au",
+    "languages": ["en"],
+    "source": "https://www.lifeline.org.au"
+  }
+}

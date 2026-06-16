@@ -1,3 +1,23 @@
 __pycache__/
 *.pyc
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
 eval/report.json
+
+# Internal, NOT for the public repo. Keep strategy, listings and the manuscript
+# out of GitHub. Removing a line here makes that file pushable, so think first.
+OUTREACH.md
+OUTREACH-TIER1.md
+NOAH-LEDGER.md
+STORE-LISTING.md
+book/
+media/
+*.zip
+
+# Stray exported images (screenshots, cover exports). The code repo needs none.
+*.png
