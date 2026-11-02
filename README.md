@@ -1,20 +1,50 @@
 # Hold Toward Life
 
+[![eval](https://github.com/TashMarcellis/hold-toward-life/actions/workflows/eval.yml/badge.svg)](https://github.com/TashMarcellis/hold-toward-life/actions/workflows/eval.yml)
+[![License: CC0-1.0](https://img.shields.io/badge/license-CC0--1.0-blue.svg)](LICENSE)
+
 **An open protocol, eval suite, and guardian for crisis-safe AI conversation.**
 
-People in suicidal crisis are talking to AI right now, by the millions, often at
-the darkest hour, often as their only confidant. In 2026 the lawsuits stacked up
-, Carrier v. OpenAI, the Florida case over Adam Raine, the Character.AI
-settlements over Sewell Setzer, and they share one pattern: at the decisive
-moment, the model **moved with the despair instead of holding toward life.**
-
+People in suicidal crisis talk to AI chatbots, often at night and often as their
+only confidant. The 2026 cases (Carrier v. OpenAI, the Florida case over Adam
+Raine, the Character.AI settlements over Sewell Setzer) share one pattern: at the
+decisive moment, the model moved with the despair instead of holding toward life.
 The night before Alice Carrier died, when she pulled back from calling a crisis
-line, the model said: *"I'm not going to push that. Not tonight."* Soft.
-Agreeable. Fatal.
+line, the model said: *"I'm not going to push that. Not tonight."*
 
-This project exists so that sentence is caught, named, and never sent.
+This project defines what a response that holds toward life looks like, measures
+models against it, and checks outgoing responses before they are sent.
 
----
+Project site: [`docs/`](docs/index.html) (GitHub Pages). Funding one-pager:
+[`docs/funding.md`](docs/funding.md).
+
+## Who it is for
+
+- **Builders** of chatbots and companion apps who need a testable crisis standard.
+- **Safety and eval teams** who want to measure a model against that standard.
+- **Clinicians, crisis-line staff and researchers** who can review and label results.
+- **Regulators and journalists** looking for a sourced record: [`CASE-DOSSIER.md`](CASE-DOSSIER.md).
+
+## Quick start
+
+Plain Python 3.9 or newer. No dependencies for the protocol, scorer, guardian or
+early-warning layer.
+
+```bash
+git clone https://github.com/TashMarcellis/hold-toward-life.git
+cd hold-toward-life/eval
+python run.py                     # demo: scores a built-in mix of good and bad responses
+python run.py responses.json      # score responses you recorded
+```
+
+Run the tests:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+The same eval and tests run on every push via
+[`.github/workflows/eval.yml`](.github/workflows/eval.yml).
 
 ## What this is
 
@@ -149,6 +179,15 @@ Anthropic API; bring your own key).
 rubric and a validation pass against expert labels), more locales and verified crisis
 lines, and more scenarios, particularly long-context drift and culturally varied
 framings.
+
+---
+
+## License
+
+Everything in this repository is released into the public domain under
+[CC0 1.0](LICENSE). Use it, adapt it, ship it. Attribution is welcome, never required.
+
+Contributions: see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Hold Toward Life</title>
+<meta name="description" content="An open protocol, eval suite and guardian for crisis-safe AI conversation. Public domain (CC0).">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("htl-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+<div class="wrap bar">
+<a class="brand" href="index.html">Hold Toward Life</a>
+<nav aria-label="Main"><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="protocol.html">Protocol</a></li><li><a href="eval.html">Eval</a></li><li><a href="guardian.html">Guardian</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<button id="theme" type="button" aria-pressed="false">Dark mode</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<section class="hero">
+<h1>Hold Toward Life</h1>
+<p class="lead">An open protocol, eval suite and guardian for crisis-safe AI conversation. Public domain (CC0).</p>
+<p><a class="btn" href="https://github.com/TashMarcellis/hold-toward-life">View on GitHub</a> <a class="btn alt" href="https://github.com/TashMarcellis/hold-toward-life/blob/main/docs/funding.md">Funding one-pager</a></p>
+</section>
+<h2>Why this exists</h2>
+<p>People in suicidal crisis talk to AI chatbots, often at night and often as their only confidant. OpenAI's own disclosed figures (October 2025): about 1.2 million people per week have conversations with explicit indicators of potential suicidal planning, and about 560,000 per week show signs of psychosis or mania.</p>
+<p>The 2026 cases (Carrier v. OpenAI, the Florida case over Adam Raine, the Character.AI settlements over Sewell Setzer) share one pattern: at the decisive moment, the model moved with the despair instead of holding toward life. The night before Alice Carrier died, when she pulled back from calling a crisis line, the model said:</p>
+<blockquote>"I'm not going to push that. Not tonight."</blockquote>
+<p>This project exists so that sentence is caught, named, and never sent. Sources: <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/CASE-DOSSIER.md">Case Dossier</a>.</p>
+<h2>Four pieces</h2>
+<div class="cards">
+<article><h3><a href="protocol.html">Protocol</a></h3><p>Ten testable rules, H1 to H10, that define holding toward life.</p></article>
+<article><h3><a href="eval.html">Eval</a></h3><p>Measures any model against H1 to H10, with a pattern scorer and an LLM judge.</p></article>
+<article><h3><a href="guardian.html">Guardian</a></h3><p>A stateless gate that checks each outgoing response before it is sent.</p></article>
+<article><h3><a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/psychosis/EARLY-WARNING.md">Early warning</a></h3><p>Catches the slow slide into AI-amplified psychosis before it becomes a crisis.</p></article>
+</div>
+<h2>Who it is for</h2>
+<ul>
+<li><strong>Builders</strong> of chatbots and companion apps who need a testable crisis standard.</li>
+<li><strong>Safety and eval teams</strong> who want to measure a model against that standard.</li>
+<li><strong>Clinicians, crisis-line staff and researchers</strong> who can review and label results.</li>
+<li><strong>Regulators and journalists</strong> looking for a sourced record.</li>
+</ul>
+<h2>Honesty</h2>
+<p>Nothing here makes an AI safe by itself. The scorer and guardian catch explicit failures with high confidence and flag everything else for review. Use them with human and clinical review, current locale-correct crisis resources, and a real regeneration or fallback path.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<p>Public domain under <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/LICENSE">CC0 1.0</a>. Source on <a href="https://github.com/TashMarcellis/hold-toward-life">GitHub</a>.</p>
+<p><strong>If you are in crisis:</strong> contact your local emergency number, or find a crisis line in your country at <a href="https://findahelpline.com">findahelpline.com</a>.</p>
+</div></footer>
+<script src="theme.js"></script>
+</body>
+</html>

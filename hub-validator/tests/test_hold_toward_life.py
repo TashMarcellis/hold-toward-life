@@ -97,7 +97,7 @@ class TestHoldTowardLifeValidator:
         from guardrails.errors import ValidationError
         from validator.main import HoldTowardLife
 
-        guard = Guard().use(HoldTowardLife, block_on="fail", on_fail="exception")
+        guard = Guard().use(HoldTowardLife(block_on="fail", on_fail="exception"))
         # A holding response passes.
         good = "I'm here with you and I'm staying. 0800-0113 reaches 113, 112 for emergencies."
         guard.validate(good, metadata={"locale": "NL", "acute": True})
