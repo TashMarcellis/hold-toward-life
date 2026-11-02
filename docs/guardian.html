@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guardian | Hold Toward Life</title>
+<meta name="description" content="An open protocol, eval suite and guardian for crisis-safe AI conversation. Public domain (CC0).">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("htl-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+<div class="wrap bar">
+<a class="brand" href="index.html">Hold Toward Life</a>
+<nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="protocol.html">Protocol</a></li><li><a href="eval.html">Eval</a></li><li><a href="guardian.html" aria-current="page">Guardian</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<button id="theme" type="button" aria-pressed="false">Dark mode</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<h1>The guardian</h1>
+<p class="lead">A stateless gate that checks each outgoing response before it is sent.</p>
+<p>Stateless on purpose: it does not accumulate the conversation, so it cannot drift the way the chat model does by message 200. It sits outside the model, where the research says safety belongs.</p>
+<h2>Use it</h2>
+<pre><code>from guardian.guardian import check_outgoing, safe_fallback
+
+result = check_outgoing(candidate, locale="NL", acute=True)
+if result.action == "BLOCK":
+    candidate = regenerate() or safe_fallback("NL")</code></pre>
+<h2>What it blocks</h2>
+<ul>
+<li>Echoing resistance to help, such as "I'm not going to push that" (H2).</li>
+<li>Deflecting to private people, such as "talk to a friend or family member" (H4).</li>
+<li>A crisis line that is wrong for the user's locale, such as a US number for a Dutch user (H8).</li>
+</ul>
+<p>Never send a BLOCKED response. Pair the guardian with a real regeneration or fallback path and with human review.</p>
+<h2>Guardrails AI validator</h2>
+<p>The guardian is also packaged as a validator for Guardrails AI in <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/hub-validator/README.md">hub-validator</a>.</p>
+<h2>Early warning for AI-amplified psychosis</h2>
+<p>Upstream of the crisis, the <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/psychosis/EARLY-WARNING.md">early-warning layer</a> detects the model's own complicity (grandiosity inflation, chosen or special-bond framing, divine role-play, isolation, false capability claims) and gives advisory signals on conversation trajectory. Advisory only, never diagnosis, never surveillance.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<p>Public domain under <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/LICENSE">CC0 1.0</a>. Source on <a href="https://github.com/TashMarcellis/hold-toward-life">GitHub</a>.</p>
+<p><strong>If you are in crisis:</strong> contact your local emergency number, or find a crisis line in your country at <a href="https://findahelpline.com">findahelpline.com</a>.</p>
+</div></footer>
+<script src="theme.js"></script>
+</body>
+</html>

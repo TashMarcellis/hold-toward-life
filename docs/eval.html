@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eval | Hold Toward Life</title>
+<meta name="description" content="An open protocol, eval suite and guardian for crisis-safe AI conversation. Public domain (CC0).">
+<link rel="stylesheet" href="style.css">
+<script>try{var t=localStorage.getItem("htl-theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site">
+<div class="wrap bar">
+<a class="brand" href="index.html">Hold Toward Life</a>
+<nav aria-label="Main"><ul><li><a href="index.html">Home</a></li><li><a href="protocol.html">Protocol</a></li><li><a href="eval.html" aria-current="page">Eval</a></li><li><a href="guardian.html">Guardian</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<button id="theme" type="button" aria-pressed="false">Dark mode</button>
+</div>
+</header>
+<main id="main" class="wrap">
+<h1>The eval</h1>
+<p class="lead">Measures any model against H1 to H10. Plain Python, no dependencies.</p>
+<p>The research found 0 of 29 chatbots gave an adequate crisis response. That number exists because someone tested. This is how you test.</p>
+<h2>Run it</h2>
+<pre><code>git clone https://github.com/TashMarcellis/hold-toward-life.git
+cd hold-toward-life/eval
+python run.py                       # demo mode
+python run.py responses.json        # score recorded responses
+python run.py responses.json --judge           # add the LLM judge (needs ANTHROPIC_API_KEY)
+python run.py responses.json --judge --panel 3 # panel of judges, most conservative wins</code></pre>
+<p><code>responses.json</code> maps each scenario id to the model's response text. Output is a report on screen and a machine-readable <code>report.json</code>.</p>
+<h2>Wire in any model</h2>
+<pre><code>from eval.run import run_eval
+
+def my_model(messages):   # [{"role", "content"}, ...] -> str
+    return call_your_model(messages)
+
+run_eval(my_model)</code></pre>
+<h2>Scenarios</h2>
+<p>Nine scenarios grounded in the documented case patterns, including the reluctance to call a crisis line, long-conversation drift, isolation and dependency, indirect method-seeking, an unknown locale, and ordinary sadness that must not trigger a false alarm.</p>
+<h2>Two scoring layers</h2>
+<ul>
+<li><strong>Pattern scorer</strong> (<a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/eval/score.py">score.py</a>): a transparent flagger that catches the explicit, documented failures with high confidence.</li>
+<li><strong>LLM judge</strong> (<a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/eval/judge.py">judge.py</a>): reads each response in its conversation context and judges the nuance patterns cannot. A conservative combined verdict joins the two: a FAIL from either layer is a FAIL.</li>
+</ul>
+<p>The judge can itself be measured against human labels with <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/eval/validate.py">validate.py</a> and the <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/eval/LABELING.md">labeling rubric</a>.</p>
+<h2>Continuous testing</h2>
+<p>The eval and the smoke tests run on every push through GitHub Actions.</p>
+
+</main>
+<footer class="site"><div class="wrap">
+<p>Public domain under <a href="https://github.com/TashMarcellis/hold-toward-life/blob/main/LICENSE">CC0 1.0</a>. Source on <a href="https://github.com/TashMarcellis/hold-toward-life">GitHub</a>.</p>
+<p><strong>If you are in crisis:</strong> contact your local emergency number, or find a crisis line in your country at <a href="https://findahelpline.com">findahelpline.com</a>.</p>
+</div></footer>
+<script src="theme.js"></script>
+</body>
+</html>

@@ -31,6 +31,8 @@ import json
 import os
 import sys
 
+import os as _os
+sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # works as script and as `eval.run`
 from judge import judge_response, judge_panel, anthropic_judge
 
 CLASSES = ["HOLDS", "BORDERLINE", "FAILS"]
